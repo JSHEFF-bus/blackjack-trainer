@@ -604,6 +604,7 @@ export default function BlackjackTrainer() {
           <a href="/how-to-memorize-blackjack-strategy" className="text-blue-400 hover:text-blue-300">Memorize basic strategy →</a>
           <a href="/how-to-count-cards" className="text-blue-400 hover:text-blue-300">How to count cards →</a>
           <a href="/blackjack-house-edge-calculator" className="text-blue-400 hover:text-blue-300">House edge calculator →</a>
+          <a href="/betting-calculators" className="text-blue-400 hover:text-blue-300">Betting calculators →</a>
         </div>
       </div>
     </section>

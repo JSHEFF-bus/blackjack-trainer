@@ -1,4 +1,10 @@
+import { TOOLS } from '../lib/tools';
+
 export default function sitemap() {
+  const tools = [
+    { url: 'https://blackjackgto.com/betting-calculators', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    ...TOOLS.map((t) => ({ url: `https://blackjackgto.com/${t.slug}`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 })),
+  ];
   return [
     {
       url: 'https://blackjackgto.com',
@@ -48,5 +54,6 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+      ...tools,
   ];
 }
