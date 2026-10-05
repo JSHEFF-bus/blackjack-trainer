@@ -26,7 +26,10 @@ export default function Tool() {
   const be = useMemo(() => pickemBreakevenLeg(n, table), [n, JSON.stringify(table)]);
   const s = Number(stake);
 
-  const setTier = (k, v) => setPay((P) => ({ ...P, [m]: { ...P[m], [n]: { ...P[m][n], [k]: v === '' ? '' : Number(v) } } }));
+  // Keep the RAW text the user typed. Converting to Number on every keystroke turned
+  // "4." into "4", so a decimal point could never be entered and 4.25 became 425.
+  // pickemValue() converts with Number() at calculation time.
+  const setTier = (k, v) => setPay((P) => ({ ...P, [m]: { ...P[m], [n]: { ...P[m][n], [k]: v } } }));
 
   return (
     <div>

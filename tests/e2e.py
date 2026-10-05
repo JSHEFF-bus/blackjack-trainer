@@ -49,6 +49,13 @@ with sync_playwright() as p:
     t=body(pg); check("pick'em: 2-pick Power 3x break-even 57.7%", '57.7%' in t, t[:400])
     fill(pg,'Pick 1 probability','50'); fill(pg,'Pick 2 probability','50'); t=body(pg)
     check("pick'em: two 50% picks at 3x = -25.0%", '-25.0%' in t)
+    # 5b regression: decimal multipliers must survive typing (4.25 once became 425)
+    pg.get_by_role('button', name='3-pick').click(); pg.wait_for_timeout(100)
+    fill(pg,'3 of 3 multiplier','4.25')
+    for i in (1,2,3): fill(pg,f'Pick {i} probability','50')
+    v=pg.get_by_label('3 of 3 multiplier',exact=True).input_value(); t=body(pg)
+    check("pick'em: typing 4.25 keeps 4.25", v=='4.25', f'box shows {v!r}')
+    check("pick'em: three 50% picks at 4.25x = -46.9%", '-46.9%' in t, t[:300])
     # 6 hedge: $50 at +400, hedge at -150 -> stake $150, locks $100
     pg.goto(f'{B}/hedge-calculator'); pg.wait_for_load_state('networkidle')
     t=body(pg); check('hedge: $50 @ +400 vs -150 -> hedge $150.00', '$150.00' in t, t[:400])
