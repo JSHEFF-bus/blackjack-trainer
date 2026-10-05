@@ -64,13 +64,14 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         {children}
         <Analytics />
-        <footer className="flex-none flex items-center justify-center gap-6 py-2 text-xs text-gray-700 bg-gray-950">
+        <footer className="flex-none flex flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 py-3 text-xs text-gray-700 bg-gray-950">
           <a href="/about" className="hover:text-gray-500 transition-colors">About</a>
           <a href="/how-to-play-blackjack" className="hover:text-gray-500 transition-colors">How to Play</a>
           <a href="/blackjack-strategy-chart" className="hover:text-gray-500 transition-colors">Strategy Chart</a>
           <a href="/how-to-count-cards" className="hover:text-gray-500 transition-colors">Card Counting</a>
           <a href="/how-to-memorize-blackjack-strategy" className="hover:text-gray-500 transition-colors">Memorize Strategy</a>
           <a href="/blackjack-house-edge-calculator" className="hover:text-gray-500 transition-colors">House Edge</a>
+          <a href="/betting-calculators" className="hover:text-gray-500 transition-colors">Betting Calculators</a>
           <a href="/privacy-policy" className="hover:text-gray-500 transition-colors">Privacy Policy</a>
         </footer>
       </body>

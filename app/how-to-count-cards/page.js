@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "How to Count Cards — Blackjack GTO",
+  title: "How to Count Cards in Blackjack",
   description: "A complete guide to Hi-Lo card counting in blackjack. Learn the running count, true count, and how to use the count to gain an edge, with real in-game examples.",
   alternates: { canonical: "/how-to-count-cards" },
 };
